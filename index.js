@@ -5,9 +5,9 @@ console.log(
 );
 twitterClient.tweets
   .search({
-    q: "Checkout @withFND",
+    q: "checkout%@withFND",
     result_type: "recent", //get latest tweets with this hashtag
-    count: 100,
+    count: 50,
   })
   .then((response) => {
     if (response.statuses) {
@@ -23,6 +23,8 @@ twitterClient.tweets
             );
         }
       });
+    } else {
+      console.log("No tweets found!");
     }
   })
   .catch((err) => console.error(err));
